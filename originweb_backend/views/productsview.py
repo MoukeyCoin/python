@@ -199,8 +199,8 @@ class ProductsView(APIView):
     def selectByFilters(self, request):       
         # 从请求体中解析JSON数据
         data = request.data
-        # 初始化查询集
-        products = Productsmodel.objects.all()
+        # 初始化查询集,isdel不等于0
+        products = Productsmodel.objects.filter(isdel=0)
 
         # 动态过滤查询集
         for key, value in data.items():
