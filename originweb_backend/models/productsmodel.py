@@ -22,5 +22,5 @@ class Productsmodel(models.Model):
     deluser = models.CharField(db_column='delUser', max_length=50, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'originweb_backend_productsmodel'

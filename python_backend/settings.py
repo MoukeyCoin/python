@@ -25,11 +25,11 @@ SECRET_KEY = "django-insecure-_n(1c0+3w6z-t5*v%rbw%0jpz9q%g(t61147vqt9#4d-m3txp!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #DEBUG = False
-
-ALLOWED_HOSTS = [
-    #"http://127.0.0.1"
-    'localhost', '127.0.0.1', 'safehomecam.com','originweb-backend-django'
-]
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = [
+#     #"http://127.0.0.1"
+#     'localhost', '127.0.0.1', 'safehomecam.com','originweb-backend-django'
+# ]
 
 
 # Application definition
@@ -53,13 +53,18 @@ MIDDLEWARE = [
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",     
     'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'https://safehomecam.com',
+    #'http://192.168.27.123:8081',
+    'http://149.28.170.19:8010',
+    
 ]
 
 ROOT_URLCONF = "python_backend.urls"
@@ -98,7 +103,7 @@ DATABASES = {
         'NAME': 'Origin_Database',  # 你要连接的数据库名称
         'USER': 'originadmin',  # 数据库用户名
         'PASSWORD': 'Origin*Admin_240926',  # 数据库密码
-        'HOST': '34.38.61.160',  # 数据库主机，默认为'localhost'
+        'HOST': '149.28.170.19',  # 数据库主机，默认为'localhost'
         'PORT': '8600',  # 数据库端口，默认为'3306',
         'OPTIONS': {
             'init_command': "SET time_zone='+08:00'",
