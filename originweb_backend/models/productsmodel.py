@@ -13,8 +13,8 @@ class Productsmodel(models.Model):
     subtitle = models.CharField(max_length=300, blank=True, null=True)
     description = models.CharField(max_length=2000, blank=True, null=True)
     link = models.CharField(max_length=2000, blank=True, null=True)
-    createtime = models.DateTimeField(db_column='createTime',auto_now_add=True)  # Field name made lowercase. auto_now_add新增时自动填写当前时间
-    modifytime = models.DateTimeField(db_column='modifyTime',auto_now=True)  # Field name made lowercase.auto_now 更新时填写当前时间
+    createtime = models.DateTimeField(db_column='createTime', blank=True, null=True)  # Field name made lowercase.
+    modifytime = models.DateTimeField(db_column='modifyTime', blank=True, null=True)  # Field name made lowercase.
     isdel = models.IntegerField(db_column='isDel')  # Field name made lowercase.
     deltime = models.DateTimeField(db_column='delTime', blank=True, null=True)  # Field name made lowercase.
     createuser = models.CharField(db_column='createUser', max_length=50, blank=True, null=True)  # Field name made lowercase.
@@ -22,5 +22,5 @@ class Productsmodel(models.Model):
     deluser = models.CharField(db_column='delUser', max_length=50, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'originweb_backend_productsmodel'

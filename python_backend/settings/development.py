@@ -15,5 +15,6 @@ DATABASES = {
         'OPTIONS': {
             'init_command': "SET time_zone='+08:00'",
         },
+        'CONN_MAX_AGE': 600,
     }
 }

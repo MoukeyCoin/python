@@ -7,7 +7,8 @@ ALLOWED_HOSTS = [
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'https://safehomecam.com',
-    'http://192.168.27.123:8081',
+    #'http://192.168.27.123:8081',
+    'http://149.28.170.19:8010',
     
 ]
 
@@ -22,5 +23,6 @@ DATABASES = {
         'OPTIONS': {
             'init_command': "SET time_zone='+08:00'",
         },
+        'CONN_MAX_AGE': 600,
     }
 }
